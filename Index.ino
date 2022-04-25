@@ -366,7 +366,7 @@ void send_data() {
       do {
 
         wdt_disable();
-        mySerial.println(F("AT#SD=1,0,80,\"innovationstracking.com\""));
+        mySerial.println(F("AT#SD=1,0,80,\"xyz.com\""));
         mySerial.flush();
         wdt_enable(WDTO_8S);
 
@@ -482,7 +482,7 @@ void send_data() {
     req.print(flat, 6);
     req += ":";
     req.print(flon, 6);
-    req += " HTTP/1.1\r\nHost: innovationstracking.com\r\nConnection:keep-alive\r\n";
+    req += " HTTP/1.1\r\nHost: xyz.com\r\nConnection:keep-alive\r\n";
     mySerial.println(req);
     mySerial.flush();
     //wdt_disable();    
@@ -551,7 +551,7 @@ void send_data() {
       //wdt_enable(WDTO_8S);
       req = "\r\nGET /api.php?func=getSleepTime&params=";
       req.print(deviceid);
-      req += " HTTP/1.1\r\nHost: innovationstracking.com\r\nConnection:keep-alive\r\n";
+      req += " HTTP/1.1\r\nHost: xyz.com\r\nConnection:keep-alive\r\n";
       mySerial.println(req);
       mySerial.flush();
       //wdt_disable();
